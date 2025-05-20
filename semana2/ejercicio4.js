@@ -11,42 +11,6 @@ function obtenerPromedio(numeros) {
 }
 
 function obtenerMayor(numeros) {
-<<<<<<< HEAD
-    
-}
- function obtenerMenor(numeros) {
-    let menor = numeros[0];
-    for (let i = 0; i < array.length; i++) {
-        
-        
-    }
-    
- }
-
-function resumenEstadistico(numeros) {
-    const promedio = obtenerPromedio(numeros);
-    const mayor = obtenerMayor(numeros);
-    const menor = obtenerMenor(numeros);
-
-    return { menor, mayor, promedio}
-    return { 'menor': menor, 'Mayor': mayor, 'promedio': promedio}
-
-}
-
-function nombresConVocal(nombres) {
-    const vocales = ["a", "e", "i", "o", "u"];
-    const resultado = [];
-
-    for (let i = 0; i < nombres.length; i++) {
-        let primeraLetra = nombres[i][0].tolowerCase();
-        if (vocales.includes(primeraLetra)){
-            resultado.push(nombres[i]);
-        }
-        
-    }
-    return resultado;
-
-=======
   let mayor = numeros[0];
   for (let i = 0; i < numeros.length; i++) {
     if (numeros[i] > mayor) {
@@ -87,7 +51,6 @@ function nombresConVocal(nombres) {
   }
   return resultado;
 }
->>>>>>> c8062c813da253ecccbc803aa4e6e3e22e7bdf16
 
 async function main() {
   const edades = [20, 18, 25, 30, 22];
@@ -96,15 +59,6 @@ async function main() {
   const nombres = ["Ana", "Esteban", "Luis", "Oscar", "María"];
 
   console.log(`Promedio = ${obtenerPromedio(edades)}`);
-<<<<<<< HEAD
-  console.log(`el numero mayor de ${lista} = ${obtenermayor(lista)}`);
-  const estadistica = resumenEstadistico(datos);
-  console.log(`El resumen estadistico de: ${datos}`);
-  console.log(`El numero menor es: ${estadistica.menor}`);
-  console.log(`El numero mayor es: ${estadistica.mayor}`);
-  console.log(`El promedio es: ${estadistica.promedio}`);
-  console.log(  )
-=======
   console.log(`El número mayor de ${lista} = ${obtenerMayor(lista)}`);
   const estadistica = resumenEstadistico(datos);
   console.log(`El resumen estadístico de: ${datos}`);
@@ -114,7 +68,6 @@ async function main() {
   console.log("Lista de nombres: ", nombres);
   console.log("Nombres solo con vocal: ", nombresConVocal(nombres));
 
->>>>>>> c8062c813da253ecccbc803aa4e6e3e22e7bdf16
 }
 
 main();
