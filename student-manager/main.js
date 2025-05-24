@@ -1,14 +1,40 @@
 "use strict";
 
 let students = [];
+//cargar lo que se guardo en localStorage
+window.onload = function () {
+  const stored = localStorage.getItem("students");
+  if (Stored) {
+students = JSON.parse(stored)
+displayStudents ();
+updateAverage();
+  }
+};
 
-function addStudent() {
+function addStudent() { 
   const name = document.getElementById("nameInput").value.trim();
+ if (name === "" || name === isNaN || name === undefined){
+  alert ("The name is not valid");
+  return;
+ }
+ document.getElementById("nameInput").value = "";
+
   const grade = parseFloat(document.getElementById("gradeInput").value);
+ if (grade > 100 || grade < 0 || grade === undefined){
+  alert ("The grade is not valid");
+  return;
+ }
+ parseFloat(document.getElementById("gradeInput").value) = "";
 
-  const student = { name, grade };
+  const student = { 
+    name, 
+    grade,  // operador ternario
+    status: grade >= 70 ? "Passed" : "Failed",
+  };
+
   students.push(student);
-
+  
+saveToLocalStorage();
   displayStudents();
   updateAverage();
 }
@@ -40,5 +66,6 @@ function updateAverage() {
 }
 
 function saveToLocalStorage() {
-
+ localStorage.setItem("student",JSON.stringify(students));
 }
+
